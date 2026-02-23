@@ -14,7 +14,8 @@ let allCardSection = document.getElementById("allCards");
 let cards = document.querySelectorAll(".card");
 
 function calculateCount() {
-  total.innerText = cards.length;
+  const Cards = document.querySelectorAll("#allCards .card");
+  total.innerText = Cards.length;
   interviewCount.innerText = interviewList.length;
   rejectCount.innerText = rejectedList.length;
 }
@@ -95,6 +96,13 @@ allCardSection.addEventListener("click", function (event) {
       rejectedList.push(jobTitle);
     }
     interviewList = interviewList.filter((item) => item !== jobTitle);
+  }
+
+  // DELETE BUTTON
+  if (event.target.closest(".fa-trash-can")) {
+    interviewList = interviewList.filter((item) => item !== jobTitle);
+    rejectedList = rejectedList.filter((item) => item !== jobTitle);
+    card.remove();
   }
 
   calculateCount();

@@ -85,5 +85,18 @@ allCardSection.addEventListener("click", function (event) {
     rejectedList = rejectedList.filter((item) => item !== jobTitle);
   }
 
+  // REJECTED BUTTON
+  if (event.target.innerText === "REJECTED") {
+    statusElement.innerText = "REJECTED";
+    statusElement.classList.remove("bg-[#EEF4FF]");
+    statusElement.classList.add("bg-red-100", "text-red-600");
 
+    if (!rejectedList.includes(jobTitle)) {
+      rejectedList.push(jobTitle);
+    }
+    interviewList = interviewList.filter((item) => item !== jobTitle);
+  }
+
+  calculateCount();
+  filterCards();
 });

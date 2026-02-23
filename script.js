@@ -34,3 +34,25 @@ function toggleStyle(id) {
   currentStatus = id;
   filterCards();
 }
+
+function filterCards() {
+  for (let card of cards) {
+    let statusText = card.querySelector("p:nth-of-type(2)").innerText;
+
+    if (currentStatus === "all-btn") {
+      card.classList.remove("hidden");
+    } else if (currentStatus === "interview-btn") {
+      if (statusText === "INTERVIEW") {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    } else if (currentStatus === "rejected-btn") {
+      if (statusText === "REJECTED") {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    }
+  }
+}

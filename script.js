@@ -56,3 +56,34 @@ function filterCards() {
     }
   }
 }
+
+allFilterBtn.addEventListener("click", () => {
+  toggleStyle("all-btn");
+});
+interviewFilterBtn.addEventListener("click", () => {
+  toggleStyle("interview-btn");
+});
+rejectedFilterBtn.addEventListener("click", () => {
+  toggleStyle("rejected-btn");
+});
+
+allCardSection.addEventListener("click", function (event) {
+  const card = event.target.closest(".card");
+  if (!card) return;
+  const statusElement = card.querySelector("p:nth-of-type(2)");
+  const jobTitle = card.querySelector("h2").innerText;
+
+  // INTERVIEW BUTTON
+  if (event.target.innerText === "INTERVIEW") {
+    statusElement.innerText = "INTERVIEW";
+    statusElement.classList.remove("bg-[#EEF4FF]");
+    statusElement.classList.add("bg-green-100", "text-green-600");
+
+    if (!interviewList.includes(jobTitle)) {
+      interviewList.push(jobTitle);
+    }
+    rejectedList = rejectedList.filter((item) => item !== jobTitle);
+  }
+
+
+});

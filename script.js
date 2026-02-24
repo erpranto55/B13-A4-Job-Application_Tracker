@@ -12,12 +12,21 @@ let rejectedFilterBtn = document.getElementById("rejected-btn");
 
 let allCardSection = document.getElementById("allCards");
 let cards = document.querySelectorAll(".card");
+let empty = document.getElementById("empty");
 
 function calculateCount() {
-  const Cards = document.querySelectorAll("#allCards .card");
-  total.innerText = Cards.length;
+  const cards = document.querySelectorAll("#allCards .card");
+  total.innerText = cards.length;
   interviewCount.innerText = interviewList.length;
   rejectCount.innerText = rejectedList.length;
+
+  if (cards.length === 0) {
+    empty.classList.remove("hidden");
+    allCardSection.classList.add("hidden");
+  } else {
+    empty.classList.add("hidden");
+    allCardSection.classList.remove("hidden");
+  }
 }
 
 calculateCount();
@@ -37,24 +46,35 @@ function toggleStyle(id) {
 }
 
 function filterCards() {
+  let visible = 0;
+  let Cards = document.querySelectorAll("#allCards .card");
   for (let card of cards) {
     let statusText = card.querySelector("p:nth-of-type(2)").innerText;
 
     if (currentStatus === "all-btn") {
       card.classList.remove("hidden");
+      visible++;
     } else if (currentStatus === "interview-btn") {
       if (statusText === "INTERVIEW") {
         card.classList.remove("hidden");
+        visible++;
       } else {
         card.classList.add("hidden");
       }
     } else if (currentStatus === "rejected-btn") {
       if (statusText === "REJECTED") {
         card.classList.remove("hidden");
+        visible++;
       } else {
         card.classList.add("hidden");
       }
     }
+  }
+
+  if (visible === 0) {
+    empty.classList.remove("hidden");
+  } else {
+    empty.classList.add("hidden");
   }
 }
 

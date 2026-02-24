@@ -21,3 +21,13 @@ Step-2: Secondly add values to the element.<br>
 Example: `newDiv.innerText = "Hello World";`<br>
 Step-3: Now append the child in parent.<br>
 Example: `document.body.appendChild(newDiv);`<br>
+
+### 3. What is Event Bubbling? And how does it work?
+
+Part-1: Event Bubbling is one types of behavior of html file that is start from the target element and then goes up to the parent element. If I click on an any element. An event happens and bubbles up to the parent element.<br>
+Part-2: Bubbling works like this:
+a. It started from an element.
+b. After landed on the element ,its started to move to the parent.
+c. Then it goes to the parent mostly to the html.
+
+

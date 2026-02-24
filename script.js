@@ -81,6 +81,11 @@ function filterCards() {
     }
   }
 
+  if (visible === 0) {
+    empty.classList.remove("hidden");
+  } else {
+    empty.classList.add("hidden");
+  }
 }
 
 allFilterBtn.addEventListener("click", function () {

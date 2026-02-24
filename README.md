@@ -34,4 +34,7 @@ c. Then it goes to the parent mostly to the html.<br>
 
 Event Delegation is the process to apply an event on the parent file instead of child element.It is useful because of saving memory,improving performance and makes the logic easier to manage.
 
+### 5. What is the difference between preventDefault() and stopPropagation() methods?
 
+preventDefault(): It stops the default behavior of a browser.<br>
+stopPropagation(): It stops the event from moving up to the parent.<br>

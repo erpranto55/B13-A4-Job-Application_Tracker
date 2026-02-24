@@ -88,13 +88,13 @@ function filterCards() {
   }
 }
 
-allFilterBtn.addEventListener("click", () => {
+allFilterBtn.addEventListener("click", function() {
   toggleStyle("all-btn");
 });
-interviewFilterBtn.addEventListener("click", () => {
+interviewFilterBtn.addEventListener("click", function() {
   toggleStyle("interview-btn");
 });
-rejectedFilterBtn.addEventListener("click", () => {
+rejectedFilterBtn.addEventListener("click", function() {
   toggleStyle("rejected-btn");
 });
 

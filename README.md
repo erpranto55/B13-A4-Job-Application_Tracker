@@ -25,9 +25,13 @@ Example: `document.body.appendChild(newDiv);`<br>
 ### 3. What is Event Bubbling? And how does it work?
 
 Part-1: Event Bubbling is one types of behavior of html file that is start from the target element and then goes up to the parent element. If I click on an any element. An event happens and bubbles up to the parent element.<br>
-Part-2: Bubbling works like this:
-a. It started from an element.
-b. After landed on the element ,its started to move to the parent.
-c. Then it goes to the parent mostly to the html.
+Part-2: Bubbling works like this:<br>
+a. It started from an element.<br>
+b. After landed on the element ,its started to move to the parent.<br>
+c. Then it goes to the parent mostly to the html.<br>
+
+### 4. What is Event Delegation in JavaScript? Why is it useful?
+
+Event Delegation is the process to apply an event on the parent file instead of child element.It is useful because of saving memory,improving performance and makes the logic easier to manage.
 
 

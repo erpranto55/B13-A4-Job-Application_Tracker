@@ -5,6 +5,7 @@ let currentStatus = "all";
 let total = document.getElementById("total");
 let interviewCount = document.getElementById("interview-count");
 let rejectCount = document.getElementById("rejected-count");
+let jobsCount = document.getElementById("jobs-count");
 
 let allFilterBtn = document.getElementById("all-btn");
 let interviewFilterBtn = document.getElementById("interview-btn");
@@ -19,6 +20,16 @@ function calculateCount() {
   total.innerText = cards.length;
   interviewCount.innerText = interviewList.length;
   rejectCount.innerText = rejectedList.length;
+
+  let count = cards.length;
+  let text;
+  if (count !== 1) {
+    text = count + " jobs";
+  } else {
+    text = count + " job";
+  }
+
+  jobsCount.innerText = text;
 
   if (cards.length === 0) {
     empty.classList.remove("hidden");

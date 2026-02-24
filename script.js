@@ -12,7 +12,6 @@ let interviewFilterBtn = document.getElementById("interview-btn");
 let rejectedFilterBtn = document.getElementById("rejected-btn");
 
 let allCardSection = document.getElementById("allCards");
-let cards = document.querySelectorAll(".card");
 let empty = document.getElementById("empty");
 
 function calculateCount() {
@@ -59,7 +58,7 @@ function toggleStyle(id) {
 function filterCards() {
   let visible = 0;
   let Cards = document.querySelectorAll("#allCards .card");
-  for (let card of cards) {
+  for (let card of Cards) {
     let statusText = card.querySelector("p:nth-of-type(2)").innerText;
 
     if (currentStatus === "all-btn") {

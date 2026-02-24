@@ -88,13 +88,13 @@ function filterCards() {
   }
 }
 
-allFilterBtn.addEventListener("click", function() {
+allFilterBtn.addEventListener("click", function () {
   toggleStyle("all-btn");
 });
-interviewFilterBtn.addEventListener("click", function() {
+interviewFilterBtn.addEventListener("click", function () {
   toggleStyle("interview-btn");
 });
-rejectedFilterBtn.addEventListener("click", function() {
+rejectedFilterBtn.addEventListener("click", function () {
   toggleStyle("rejected-btn");
 });
 
@@ -110,6 +110,15 @@ allCardSection.addEventListener("click", function (event) {
     statusElement.classList.remove("bg-[#EEF4FF]");
     statusElement.classList.add("bg-green-100", "text-green-600");
 
+    statusElement.classList.remove(
+      "bg-[#EEF4FF]",
+      "bg-red-100",
+      "text-red-600",
+      "bg-green-100",
+      "text-green-600",
+    );
+    statusElement.classList.add("bg-green-100", "text-green-600");
+
     if (!interviewList.includes(jobTitle)) {
       interviewList.push(jobTitle);
     }
@@ -120,6 +129,15 @@ allCardSection.addEventListener("click", function (event) {
   if (event.target.innerText === "REJECTED") {
     statusElement.innerText = "REJECTED";
     statusElement.classList.remove("bg-[#EEF4FF]");
+    statusElement.classList.add("bg-red-100", "text-red-600");
+
+    statusElement.classList.remove(
+      "bg-[#EEF4FF]",
+      "bg-red-100",
+      "text-red-600",
+      "bg-green-100",
+      "text-green-600",
+    );
     statusElement.classList.add("bg-red-100", "text-red-600");
 
     if (!rejectedList.includes(jobTitle)) {

@@ -1,6 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
-let currentStatus = "all";
+let currentStatus = "all-btn";
 
 let total = document.getElementById("total");
 let interviewCount = document.getElementById("interview-count");
@@ -59,7 +59,7 @@ function filterCards() {
   let visible = 0;
   let Cards = document.querySelectorAll("#allCards .card");
   for (let card of Cards) {
-    let statusText = card.querySelector("p:nth-of-type(2)").innerText;
+    let statusText = card.querySelector(".status").innerText;
 
     if (currentStatus === "all-btn") {
       card.classList.remove("hidden");
@@ -101,8 +101,8 @@ rejectedFilterBtn.addEventListener("click", function () {
 allCardSection.addEventListener("click", function (event) {
   const card = event.target.closest(".card");
   if (!card) return;
-  const statusElement = card.querySelector("p:nth-of-type(2)");
-  const jobTitle = card.querySelector("h2").innerText;
+  const statusElement = card.querySelector(".status");
+  let jobTitle = card.querySelector("h2").innerText;
 
   // INTERVIEW BUTTON
   if (event.target.innerText === "INTERVIEW") {
